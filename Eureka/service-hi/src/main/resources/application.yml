@@ -1,0 +1,22 @@
+
+#以下声明绑定到的Eureka  Server的地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://lmy:123@localhost:8861/eureka
+  instance:
+    prefer-ip-address:    true                            #该配置将euraka管理页面上显示的服务地址显示为ip地址
+                                                            #不设置是这样的http://jonsnow-pc:8763/info
+                                                            #设置之后是这样的http://223.3.85.154:8762/info
+    instance-id:   ${spring.application.name}:${server.port}  #设置euraka管理页面上服务的名称
+
+
+#端口号和应用的名称
+server:
+  port: 8863
+spring:
+  application:
+    name: service-hi
+management:
+  security:
+    enabled: false

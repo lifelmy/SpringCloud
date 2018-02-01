@@ -1,0 +1,14 @@
+server:
+  port: 8765
+eureka:
+  client:
+    service-url:
+      defaultZone: http://lmy:123@localhost:8861/eureka
+spring:
+  application:
+    name: service-feign
+
+#直接引入就可以了，没提示，是因为feign自带的hystrix没做属性提示
+feign:
+  hystrix:
+    enabled: true

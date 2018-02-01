@@ -1,0 +1,18 @@
+server:
+  port: 8861
+security:
+  user:
+    name: lmy
+    password: 123
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    #eureka默认也是一个client,需要使用以下两个配置，表明它是一个server
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${security.user.name}:${security.user.password}@localhost:8761/eureka
+      #使用用户名和密码登录eureka
+

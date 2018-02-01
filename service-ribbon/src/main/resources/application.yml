@@ -1,0 +1,9 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://lmy:123@localhost:8861/eureka/
+server:
+  port: 8864
+spring:
+  application:
+    name: service-ribbon
